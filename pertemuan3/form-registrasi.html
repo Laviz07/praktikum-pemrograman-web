@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Pendaftaran</title>
+
+		<style>
+			td{
+				padding: 4px 8px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Form Daftar Daftaran</h1>
+		<form action="" method="post" enctype="multipart/form-data">
+			<table>
+				<!-- ------------------------------ ISI NAMA ------------------------------- -->
+				<tr>
+					<td>
+						<label for="fullName">Nama:</label>
+					</td>
+					<td>
+						<input
+							type="text"
+							name="fullName"
+							placeholder="Masukkan Nama Anda"
+							required
+							class="txt-form"
+						/>
+					</td>
+				</tr>
+
+				<!-- ------------------------------ ISI EMAIL ------------------------------ -->
+				<tr>
+					<td>
+						<label for="email">Email:</label>
+					</td>
+					<td>
+						<input
+							type="email"
+							name="email"
+							placeholder="Masukkan Email Anda"
+							required
+							class="txt-form"
+						/>
+					</td>
+				</tr>
+
+				<!-- ------------------------------ ISI NOMOR HP ------------------------------ -->
+				<tr>
+					<td>
+						<label for="no-telp">No. Telepon:</label>
+					</td>
+					<td>
+						<input
+							type="number"
+							name="no-telp"
+							placeholder="Masukkan Nomor Telepon Anda"
+							maxlength="13"
+							required
+							class="txt-form"
+						/>
+					</td>
+				</tr>
+
+				<!-- -------------------------- PILIH JENIS KELAMIN -------------------------- -->
+				<tr>
+					<td>
+						<label for="kelamin">Jenis Kelamin:</label>
+					</td>
+					<td>
+						<input
+							type="radio"
+							name="kelamin"
+							value="Laki-laki"
+							required
+							maxlength="30"
+						/>
+						<label for="Laki-laki">Laki-laki</label>
+
+						<input
+							type="radio"
+							name="kelamin"
+							value="Perempuan"
+							required
+							maxlength="30"
+						/>
+						<label for="Perempuan">Perempuan</label>
+					</td>
+				</tr>
+
+
+				<!-- ------------------------------ PILIH HOBI ------------------------------- -->
+				<tr>
+					<td>
+						<label for="hobi">Hobi:</label>
+					</td>
+					<td>
+						<input type="checkbox" name="hobi" value="Membaca" required />
+						<label for="Membaca">Membaca</label>
+
+						<input type="checkbox" name="hobi" value="Menulis" required />
+						<label for="Menulis">Menulis</label>
+
+						<input type="checkbox" name="hobi" value="Olahraga" required />
+						<label for="Olahraga">Olahraga</label>
+					</td>
+				</tr>
+
+
+				<!-- ------------------------------ PILIH KOTA ------------------------------- -->
+				<tr>
+					<td>
+						<label for="kota">Kota Asal:</label>
+					</td>
+					<td>
+						<select name="kota" id="kota">
+							<option value="Bekasi">Bekasi</option>
+							<option value="Jakarta">Jakarta</option>
+							<option value="Bandung">Bandung</option>
+						</select>
+					</td>
+				</tr>
+
+				<!-- ----------------------- ISI TANGGAL LAHIR ------------------------ -->
+				<tr>
+					<td>
+						<label for="tgl-lahir">Tanggal Lahir:</label>
+					</td>
+					<td>
+						<input type="date" name="tgl-lahir">
+					</td>
+				</tr>
+
+
+				<!-- ----------------------------- UPLOAD FOTO ----------------------------- -->
+				<tr>
+					<td>
+						<label for="foto">Upload Foto:</label>
+					</td>
+					<td>
+						<input type="file" name="foto" accept="image/*" required />
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<button type="submit">Daftar</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

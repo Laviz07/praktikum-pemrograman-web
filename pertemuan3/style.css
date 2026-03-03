@@ -1,0 +1,22 @@
+body{
+    margin: 20px;
+}
+
+form{
+    background-color: #121212;
+    color: white;
+    margin: auto;
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.txt-form{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
