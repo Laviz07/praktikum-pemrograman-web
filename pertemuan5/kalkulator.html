@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Kalkulator Sederhana</title>
+	</head>
+	<body>
+		<h2>Kalkulator</h2>
+
+		<input type="number" name="num1" id="num1" />
+		<input type="number" name="num2" id="num2" />
+
+		<button onclick="hitung()">Hitung</button>
+
+		<p><span id="hasil"></span></p>
+
+        <script>
+            function hitung(){
+                let num1 = document.getElementById("num1").value;   
+                let num2 = document.getElementById("num2").value;   
+                let hasil = parseInt(num1) + parseInt(num2);
+                document.getElementById("hasil").innerHTML = hasil
+            }
+        </script>
+	</body>
+</html>

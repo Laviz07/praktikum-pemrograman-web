@@ -1,0 +1,150 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+	background-color: #9c1328;
+	color: white;
+	text-align: center;
+	padding: 20px;
+}
+
+nav {
+	background-color: #d73e3e;
+	padding: 10px;
+	text-align: center;
+}
+
+nav ul {
+	list-style: none;
+}
+
+nav ul li {
+	display: inline;
+	margin: 0 15px;
+}
+
+nav ul li a {
+	color: white;
+	text-decoration: none;
+}
+
+.container {
+	display: flex;
+	flex-direction: space-between;
+	padding: 20px;
+}
+
+.content {
+	flex: 2;
+	padding: 20px;
+	background-color: #ecf0f1;
+	/* background-color: blue; */
+	border-radius: 10px;
+}
+
+.form-group {
+	margin-top: 24px;
+	margin-bottom: 10px;
+}
+
+label {
+	display: block;
+	font-size: 16px;
+	margin-bottom: 8px;
+	font-weight: 700;
+}
+
+.input-group {
+	display: block;
+	margin-bottom: 16px;
+}
+
+.input-form {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.radio-group {
+	display: flex;
+	align-items: center; /* bikin sejajar vertikal */
+	gap: 8px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.radio-form {
+	margin: 0; /* hilangkan margin bawaan */
+}
+
+.radio-group label {
+	margin: 0;
+	line-height: 1;
+}
+
+.underline{
+    border-bottom: 1px solid #808080;
+    padding-bottom: 8px;
+}
+
+.sidebar {
+	flex: 1;
+	padding: 20px;
+	background-color: #bdc3c7;
+	border-radius: 10px;
+	margin-left: 20px;
+}
+
+footer {
+	text-align: center;
+	padding: 10px;
+	background-color: #2c3e50;
+	color: white;
+	margin-top: 20px;
+}
+
+.btn {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #db343f;
+	color: white;
+	text-decoration: none;
+	border-radius: 5px;
+	margin-top: 10px;
+	border: none;
+	cursor: pointer;
+	transition:
+		background-color 0.3s ease-in-out,
+		transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+	background-color: #2980b9;
+	transform: scale(1.1);
+}
+
+.btn-submit{
+    background-color: #2980b9;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #2980b9;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease-in-out,
+        transform 0.2s ease-in-out;
+}
+
+.btn-submit:hover{
+    background-color: white;
+    color: #2980b9;
+    border: 1px solid #2980b9;
+}
