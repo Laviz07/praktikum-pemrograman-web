@@ -1,0 +1,91 @@
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f6f8;
+	padding: 30px;
+}
+
+h1 {
+	text-align: center;
+}
+
+form {
+	background-color: white;
+	padding: 20px;
+	width: 400px;
+	margin: auto;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	margin-bottom: 40px;
+}
+
+.container-input {
+	margin-bottom: 24px;
+	display: grid;
+}
+
+.select-barang,
+.input-jml {
+	/* width: 100%; */
+	padding: 8px;
+	margin-top: 5px;
+}
+
+input[type="submit"] {
+	margin-top: 10px;
+	width: 100%;
+	padding: 10px;
+	background-color: #2e86de;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background-color: #1b4f72;
+}
+
+.hasil {
+	background-color: white;
+	padding: 20px;
+	width: 400px;
+	margin: auto;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hasil h2{
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+	padding: 6px 0;
+	border-bottom: 1px solid #eee;
+}
+
+.row span:first-child {
+	color: #555;
+}
+
+.row span:last-child {
+	font-weight: bold;
+}
+
+.total {
+	border-top: 2px solid #000;
+	margin-top: 10px;
+	padding-top: 10px;
+	font-size: 16px;
+}
+
+.empty {
+	text-align: center;
+	color: gray;
+	margin-top: 20px;
+	padding: 20px;
+	font-style: italic;
+	font-size: 18px;
+}
