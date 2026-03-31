@@ -17,7 +17,7 @@ function rupiah($angka)
 
 $hasil = "";
 
-if (isset($_POST['id_barang']) && isset($_POST['jumlah_beli'])) {
+if (isset($_POST['submit'])) {
     $id_barang = $_POST['id_barang'];
     $jumlah_beli = $_POST['jumlah_beli'];
 
@@ -81,7 +81,7 @@ if (isset($_SESSION['hasil'])) {
             <input type="number" name="jumlah_beli" id="jumlah_beli" class="input-jml" required>
         </div>
 
-        <input type="submit" value="Beli">
+        <input type="submit" name="submit" value="Beli">
     </form>
 
     <div class="hasil">
