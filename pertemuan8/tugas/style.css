@@ -111,6 +111,18 @@ form {
 	gap: 24px;
 }
 
+.form-title {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	color: white;
+	font-size: 24px;
+	font-weight: 700;
+	width: 100%;
+	padding: 20px 20px;
+	border-radius: 0 0 24px 24px;
+}
+
 .form-group {
 	display: flex;
 	flex-direction: column;

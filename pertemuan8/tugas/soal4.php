@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
 
             <!-- FORM -->
             <div class="panel-top">
-                <div class="image-title">
+                <div class="form-title">
                     <h2>Soal 4 - Menentukan Ganjil Genap</h2>
                 </div>
 

@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
 
             <!-- FORM -->
             <div class="panel-top">
-                <div class="image-title">
+                <div class="form-title">
                     <h2>Soal 3 - Menampilkan Daftar Hewan</h2>
                 </div>
 

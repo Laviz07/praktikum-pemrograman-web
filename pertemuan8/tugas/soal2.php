@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
 
             <!-- FORM -->
             <div class="panel-top">
-                <div class="image-title">
+                <div class="form-title">
                     <h2>Soal 2 - Mencetak Bilangan Genap</h2>
                 </div>
 

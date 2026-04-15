@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
 
             <!-- FORM -->
             <div class="panel-top">
-                <div class="image-title">
+                <div class="form-title">
                     <h2>Soal 1- Menentukan Jenis Kendaraan</h2>
                 </div>
 
