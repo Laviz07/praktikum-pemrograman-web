@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="id">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<title>Praktikum Pemrograman Web - Muhammad Rafisyah Rizkiyawan</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<!-- Top Navigation -->
+		<nav>
+			<div class="nav-inner">
+				<div class="nav-logo">M. Rafisyah R.</div>
+
+				<ul class="nav-links">
+					<li><a href="#" class="nav-item">Home</a></li>
+					<li><a href="#about" class="nav-item">Tentang</a></li>
+					<li><a href="#praktikum" class="nav-item">Praktikum</a></li>
+
+					<!-- GitHub (muncul di mobile) -->
+					<li class="nav-github-mobile">
+						<a
+							href="https://github.com/Laviz07/praktikum-pemrograman-web"
+							target="_blank"
+						>
+							GitHub
+						</a>
+					</li>
+				</ul>
+
+				<!-- GitHub (desktop) -->
+				<div class="nav-menu">
+					<a
+						href="https://github.com/Laviz07/praktikum-pemrograman-web"
+						target="_blank"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							fill="currentColor"
+							class="bi bi-github"
+							viewBox="0 0 16 16"
+						>
+							<path
+								d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+							/>
+						</svg>
+					</a>
+				</div>
+
+				<button class="nav-toggle" onclick="toggleMenu()">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						fill="currentColor"
+						class="bi bi-list"
+						viewBox="0 0 16 16"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+						/>
+					</svg>
+				</button>
+			</div>
+		</nav>
+
+		<script>
+			const navInner = document.querySelector(".nav-inner");
+
+			// toggle menu
+			function toggleMenu() {
+				document.querySelector(".nav-links").classList.toggle("active");
+			}
+
+			// auto close saat klik
+			document.querySelectorAll(".nav-item").forEach((item) => {
+				item.addEventListener("click", () => {
+					document.querySelector(".nav-links").classList.remove("active");
+				});
+			});
+
+			// close kalau klik di luar navbar
+			document.addEventListener("click", function (e) {
+				const isClickInsideNav = navInner.contains(e.target);
+
+				if (!isClickInsideNav) {
+					document.querySelector(".nav-links").classList.remove("active");
+				}
+			});
+
+			// active menu
+			const navLinks = document.querySelectorAll(".nav-item");
+			const sections = document.querySelectorAll("section");
+
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							const id = entry.target.getAttribute("id");
+
+							navLinks.forEach((link) => {
+								link.classList.remove("active");
+
+								if (link.getAttribute("href") === "#" + id) {
+									link.classList.add("active");
+								}
+							});
+						}
+					});
+				},
+				{
+					root: null,
+					threshold: 0.6, // section harus 60% kelihatan baru aktif
+				},
+			);
+
+			sections.forEach((section) => {
+				observer.observe(section);
+			});
+
+			// 🔥 handle klik manual biar tetap responsif
+			navLinks.forEach((link) => {
+				link.addEventListener("click", function () {
+					navLinks.forEach((l) => l.classList.remove("active"));
+					this.classList.add("active");
+				});
+			});
+		</script>
+
+		<!-- Main Content -->
+		<main>
+			<!-- Hero Section -->
+			<section class="hero" id="home">
+				<img
+					alt="Modern tech background"
+					class="hero-bg-img"
+					src="https://t4.ftcdn.net/jpg/04/63/37/51/360_F_463375173_vBKRkUbVoCuS9lpUmhdfCc13pprPr148.jpg"
+				/>
+				<div class="hero-gradient-overlay"></div>
+				<div class="hero-tint-overlay"></div>
+				<div class="hero-content">
+					<h1 class="hero-title">Praktikum Pemrograman Web</h1>
+					<p class="hero-desc">
+						Kumpulan tugas dan hasil pembelajaran selama mengikuti mata kuliah
+						Pemrograman Web di Universitas Singaperbangsa Karawang.
+					</p>
+					<div class="hero-actions">
+						<a href="#praktikum" class="btn-primary">Lihat Tugas</a>
+						<a href="#about" class="btn-secondary">Tentang Saya</a>
+					</div>
+				</div>
+			</section>
+
+			<!-- About Me Section -->
+			<section class="about-section" id="about">
+				<div class="about-grid">
+					<div class="about-photo-wrapper">
+						<img alt="Muhammad Rafisyah Rizkiyawan" src="rafi.jpg" />
+					</div>
+					<div class="about-info">
+						<h2 class="about-name">Muhammad Rafisyah Rizkiyawan</h2>
+						<p class="about-role">4A Informatika - 2410631170091</p>
+						<p class="about-desc">
+							Saya merupakan mahasiswa Informatika Universitas Singaperbangsa
+							Karawang yang berfokus pada pengembangan web dengan pendekatan
+							desain dan pengalaman pengguna (UI/UX). Selama praktikum, saya
+							mengembangkan berbagai proyek menggunakan HTML, CSS, JavaScript,
+							dan PHP, serta mengintegrasikannya dengan database MySQL. Saya
+							tertarik dalam menciptakan antarmuka yang tidak hanya fungsional,
+							tetapi juga intuitif dan nyaman digunakan.
+						</p>
+						<div class="about-tags">
+							<span class="tag">HTML</span>
+							<span class="tag">CSS</span>
+							<span class="tag">JavaScript</span>
+							<span class="tag">PHP</span>
+							<span class="tag">MySQL</span>
+							<span class="tag">UI/UX</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Meetings Section -->
+			<section id="praktikum">
+				<div class="section-header">
+					<h2 class="section-title">Daftar Pertemuan</h2>
+					<p class="section-subtitle">Tugas dan Hasil Pembelajaran</p>
+				</div>
+
+				<div class="cards-grid">
+					<!-- Card 2 -->
+					<article class="card">
+						<div class="card-image">
+							<img
+								alt="HTML Code"
+								src="https://img.freepik.com/free-photo/design-html-web-design-template-concept_53876-120438.jpg?semt=ais_hybrid&w=740&q=80"
+							/>
+							<span class="card-badge">Week 2</span>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">Pertemuan 2: Dasar HTML</h3>
+							<p class="card-desc">
+								Pengenalan struktur dasar HTML serta penggunaan tag-tag utama
+								untuk membangun dokumen web.
+							</p>
+							<div class="card-actions">
+								<a
+									href="pertemuan2/surat-lamaran.html"
+									class="card-btn-primary card-btn-primary-featured"
+								>
+									Tugas
+								</a>
+							</div>
+						</div>
+					</article>
+
+					<!-- Card 3 -->
+					<article class="card">
+						<div class="card-image">
+							<img
+								alt="Kode Form HTML"
+								src="https://www.jotform.com/blog/wp-content/uploads/2019/09/HTML-forms-featured-01.png"
+							/>
+							<span class="card-badge">Week 3</span>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">Pertemuan 3: Form & Input HTML</h3>
+							<p class="card-desc">
+								Membuat berbagai komponen input seperti text, dropdown, radio,
+								checkbox, serta validasi form sederhana.
+							</p>
+							<div class="card-actions">
+								<a
+									href="pertemuan3/form-registrasi.html"
+									class="card-btn-primary card-btn-primary-featured"
+								>
+									Tugas
+								</a>
+							</div>
+						</div>
+					</article>
+
+					<!-- Card 4 -->
+					<article class="card">
+						<div class="card-image">
+							<img
+								alt="Css image"
+								src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-gt-C7cN8cvX4QQuA-fUTyyUe8F2JO0HYbg&s"
+							/>
+							<span class="card-badge">Week 4</span>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">Pertemuan 4: CSS</h3>
+							<p class="card-desc">
+								Mempelajari dasar CSS, metode penulisan, layout, hingga animasi
+								untuk mempercantik tampilan web.
+							</p>
+							<div class="card-actions">
+								<a
+									href="pertemuan4/tugas/register.html"
+									class="card-btn-primary card-btn-primary-featured"
+								>
+									Tugas
+								</a>
+								<a
+									href="pertemuan4/belajar/html-css.html"
+									class="card-btn-outline"
+									>Belajar</a
+								>
+							</div>
+						</div>
+					</article>
+
+					<!-- Card 5 -->
+					<article class="card">
+						<div class="card-image">
+							<img
+								alt="JavaScript image"
+								src="https://cdn.hashnode.com/res/hashnode/image/upload/v1739013258340/0b029386-744a-4f57-bfde-1091c94d11ae.png"
+							/>
+							<span class="card-badge">Week 5</span>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">Pertemuan 5: JavaScript</h3>
+							<p class="card-desc">
+								Pengenalan JavaScript, tipe data, serta implementasi sederhana
+								seperti pembuatan kalkulator.
+							</p>
+							<div class="card-actions">
+								<a
+									href="pertemuan5/tugas/index.html"
+									class="card-btn-primary card-btn-primary-featured"
+								>
+									Tugas
+								</a>
+								<a
+									href="pertemuan5/belajar/kalkulator.html"
+									class="card-btn-outline"
+									>Belajar</a
+								>
+							</div>
+						</div>
+					</article>
+
+					<!-- Card 6 -->
+					<article class="card">
+						<div class="card-image">
+							<img
+								alt="PHP image"
+								src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT22vWJIQb9CnNoh7G3c9pYc3sPhsxn0RH5Uw&s"
+							/>
+							<span class="card-badge">Week 6</span>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">Pertemuan 6: Dasar PHP</h3>
+							<p class="card-desc">
+								Memahami konsep dasar PHP sebagai bahasa server-side, termasuk
+								variabel, tipe data, dan operator..
+							</p>
+							<div class="card-actions">
+								<a
+									href="pertemuan6/tugas/index.php"
+									class="card-btn-primary card-btn-primary-featured"
+								>
+									Tugas
+								</a>
+								<a href="pertemuan6/belajar/index.php" class="card-btn-outline"
+									>Belajar</a
+								>
+							</div>
+						</div>
+					</article>
+
+					<!-- Card 7 -->
+					<article class="card">
+						<div class="card-image">
+							<img
+								alt="PHP form handling image"
+								src="https://www.yellowweb.id/blog/wp-content/uploads/2021/12/Untitled-1.jpg"
+							/>
+							<span class="card-badge">Week 7</span>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">Pertemuan 7: Form Handling PHP</h3>
+							<p class="card-desc">
+								Mengolah data dari form menggunakan method GET dan POST serta
+								menerapkan percabangan dalam PHP.
+							</p>
+							<div class="card-actions">
+								<a
+									href="pertemuan7/tugas/soal1/index.php"
+									class="card-btn-primary card-btn-primary-featured"
+								>
+									Tugas
+								</a>
+								<a href="pertemuan7/belajar/index.php" class="card-btn-outline"
+									>Belajar</a
+								>
+							</div>
+						</div>
+					</article>
+
+					<!-- Card UTS -->
+					<article class="card">
+						<div class="card-image">
+							<img
+								alt="Koperasi image"
+								src="https://www.smsperkasa.com/_next/image?url=https%3A%2F%2Fcpanel-blog.smsperkasa.com%2Fwp-content%2Fuploads%2F2025%2F12%2FKoperasi-Merah-Putih-min.jpg&w=3840&q=75"
+							/>
+							<span class="card-badge card-badge-featured">Exam</span>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">UTS: Koperasi Sederhana</h3>
+							<p class="card-desc">
+								Membuat program koperasi mahasiswa sederhana menggunakan PHP.
+							</p>
+							<div class="card-actions">
+								<a
+									href="UTS/index.php"
+									class="card-btn-primary card-btn-primary-featured"
+								>
+									Tugas
+								</a>
+							</div>
+						</div>
+					</article>
+
+					<!-- Card 8 -->
+					<article class="card">
+						<div class="card-image">
+							<img
+								alt="Logika PHP image"
+								src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,f_auto,q_auto:best,w_640/v1634025439/04f6ff60d14cd32f2ac3f2fdf537eb654ef6297f8e536dc9b54b662e48270b07.jpg"
+							/>
+							<span class="card-badge card-badge-featured">Week 8</span>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">Pertemuan 8: Logika PHP</h3>
+							<p class="card-desc">
+								Mempelajari percabangan lanjutan, perulangan, serta penggunaan
+								include dan require dalam PHP.
+							</p>
+							<div class="card-actions">
+								<a
+									href="pertemuan8/tugas/index.php"
+									class="card-btn-primary card-btn-primary-featured"
+								>
+									Tugas
+								</a>
+							</div>
+						</div>
+					</article>
+				</div>
+			</section>
+		</main>
+
+		<!-- Footer -->
+		<footer>
+			<div class="footer-inner">
+				<div class="footer-copy">© 2024 Praktikum Pemrograman Web</div>
+				<div class="footer-links">
+					<a href="#">Home</a>
+					<a href="#about">Tentang</a>
+					<a href="#praktikum">Praktikum</a>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
