@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
 
             <!-- FORM -->
             <div class="panel-top">
-                <div class="form-title">
+                <div class="header">
                     <h2>Soal 1- Menentukan Jenis Kendaraan</h2>
                 </div>
 
@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
 
         <!-- HASIL -->
         <div class="panel-bottom">
-            <div class="result-header">
+            <div class="header">
                 <h3>Jenis Kendaraan</h3>
             </div>
 

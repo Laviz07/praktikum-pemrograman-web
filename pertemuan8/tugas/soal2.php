@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
 
             <!-- FORM -->
             <div class="panel-top">
-                <div class="form-title">
+                <div class="header">
                     <h2>Soal 2 - Mencetak Bilangan Genap</h2>
                 </div>
 
@@ -60,7 +60,7 @@ if (isset($_POST['submit'])) {
 
         <!-- HASIL -->
         <div class="panel-bottom">
-            <div class="result-header">
+            <div class="header">
                 <h3>Bilangan <?= $bilAwal ?> sampai <?= $bilAkhir ?></h3>
             </div>
 
