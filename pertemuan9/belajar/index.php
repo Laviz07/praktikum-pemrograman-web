@@ -3,6 +3,8 @@
 include "proses_index.php";
 
 include "nav.php";
+
+$limit = 10; // jumlah data per halaman
 ?>
 
 <!DOCTYPE html>
@@ -120,6 +122,39 @@ include "nav.php";
         </table>
 
         <!-- /* -------------------------- end of tabel daftar buku ---------------------- */ -->
+
+        <nav>
+            <ul class="pagination justify-content-center">
+
+                <!-- Previous -->
+                <li class="page-item <?= ($page <= 1) ? 'disabled' : '' ?>">
+                    <a class="page-link"
+                        href="?page=<?= $page - 1 ?>&judul=<?= urlencode($cari_judul) ?>&tahun_terbit=<?= urlencode($cari_tahun) ?>">
+                        Previous
+                    </a>
+                </li>
+
+                <!-- Nomor halaman -->
+                <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                    <li class="page-item <?= ($i == $page) ? 'active' : '' ?>">
+                        <a class="page-link"
+                            href="?page=<?= $i ?>&judul=<?= urlencode($cari_judul) ?>&tahun_terbit=<?= urlencode($cari_tahun) ?>">
+                            <?= $i ?>
+                        </a>
+                    </li>
+                <?php endfor; ?>
+
+                <!-- Next -->
+                <li class="page-item <?= ($page >= $totalPages) ? 'disabled' : '' ?>">
+                    <a class="page-link"
+                        href="?page=<?= $page + 1 ?>&judul=<?= urlencode($cari_judul) ?>&tahun_terbit=<?= urlencode($cari_tahun) ?>">
+                        Next
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
     </div>
 
     <?php if (isset($_GET['message'])): ?>
